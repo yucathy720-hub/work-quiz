@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+  --ink: #17244a;
+  --muted: #4d5c7a;
+  --paper: #ffffff;
+  --red: #3148c5;
+  --border: #cdd6ed;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #eaf0ff;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 8%, #f8f9ff, transparent 65%), repeating-linear-gradient(100deg, #384dc008 0 1px, transparent 1px 5px);
+}
+.masthead, main, footer { width: min(720px, calc(100% - 32px)); margin-inline: auto; }
+.masthead { display: flex; align-items: center; gap: 12px; padding: 28px 0 18px; letter-spacing: .18em; }
+.seal, .stamp { color: var(--red); border: 1px solid currentColor; padding: .25em .4em; }
+.paper { background: var(--paper); border: 1px solid var(--border); padding: clamp(20px, 6vw, 52px); box-shadow: 0 14px 38px #23357116; animation: unfold .28s ease-out; }
+.intro { text-align: center; }
+h1 { font-size: clamp(1.6rem, 5.5vw, 3.05rem); line-height: 1.45; margin: .7em 0 .35em; }
+h1 span { color: var(--red); }
+p { line-height: 1.7; }
+.intro .primary { margin-top: 12px; }
+button { font: inherit; min-height: 46px; padding: 10px 20px; cursor: pointer; }
+.primary { background: var(--ink); color: white; border: 1px solid var(--ink); }
+.secondary { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, input:focus-visible + span { outline: 2px solid var(--red); outline-offset: 3px; }
+.fine, footer, .result-actions span { color: var(--muted); font-size: .875rem; }
+footer { padding: 19px 0 25px; text-align: center; }
+.progress-label, .actions, .report-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.progress-label { font-size: .9rem; color: var(--muted); }
+progress { width: 100%; height: 8px; accent-color: var(--red); }
+fieldset { margin: 24px 0; padding: 0; border: 0; min-width: 0; animation: unfold .23s ease-out; }
+legend { padding: 0; font-weight: bold; font-size: clamp(1.25rem, 4.5vw, 1.8rem); line-height: 1.5; }
+#choices { display: grid; gap: 10px; margin-top: 16px; }
+.choice { display: block; position: relative; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; }
+.choice span { display: flex; align-items: baseline; gap: 12px; padding: 12px 14px; border: 1px solid var(--border); line-height: 1.55; }
+.choice strong { color: var(--red); font-family: Georgia, serif; }
+.choice:hover span, .choice input:checked + span { background: #e8edff; border-color: #546bd3; }
+.report { border-top: 5px solid var(--red); }
+.report-top { color: var(--red); letter-spacing: .12em; }
+.era { margin: 1em 0 0; color: var(--muted); }
+h2 { font-size: clamp(2.6rem, 11vw, 4.75rem); margin: 0; }
+blockquote { margin: .45em 0; font-size: clamp(1.15rem, 4.5vw, 1.55rem); line-height: 1.5; }
+.traits { color: var(--red); margin: .65em 0; }
+dl { border-top: 1px solid var(--border); margin: 12px 0; }
+dt { margin-top: 12px; font-weight: bold; }
+dd { margin: 3px 0 0; line-height: 1.65; }
+.report .fine { margin-bottom: 0; }
+.result-actions { margin-top: 14px; }
+@keyframes unfold { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+
+.paper { border-radius: 20px; }
+button, .choice span { border-radius: 10px; }
+.intro .primary { min-width: min(100%, 200px); background: var(--red); border-color: var(--red); }
+.office-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: clamp(6px, 2vw, 14px);
+  height: clamp(60px, 14vw, 112px);
+  padding: 0 12%;
+  border-bottom: 1px solid var(--border);
+}
+.office-grid i {
+  display: block;
+  height: 64%;
+  border-radius: 9px 9px 0 0;
+  background: repeating-linear-gradient(to top, #6178ed 0 6px, #89a0ff 6px 8px);
+}
+.office-grid i:nth-child(2) { height: 100%; }
+.office-grid i:nth-child(3) { height: 79%; background: #b4c3ff; }
+.office-grid i:nth-child(4) { height: 51%; background: #cfdbff; }
+.report h2 { font-size: clamp(1.9rem, 7vw, 3.75rem); }
+.report blockquote { font-weight: 650; }
+.report .stamp { border-radius: 6px; letter-spacing: 0; }

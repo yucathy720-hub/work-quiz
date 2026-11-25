@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf0ff">
+  <title>测测你适合去哪种大厂</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+  <header class="masthead"><span class="seal" aria-hidden="true">工</span><span>打工人适配测试</span></header>
+  <main>
+    <section id="home" class="paper intro" aria-labelledby="title">
+      <div class="office-grid" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <h1 id="title">测测你适合去<br><span>哪种大厂？</span></h1>
+      <p>从临时开会到需求改版，看看哪种团队最适合你的工作节奏。</p>
+      <button id="start" class="primary" type="button">开始测试</button>
+      <p class="fine">20 道单选 · 4 种大厂类型</p>
+    </section>
+    <section id="quiz" class="paper" hidden aria-labelledby="question">
+      <div class="progress-label"><span>答题进度</span><span id="count"></span></div>
+      <progress id="progress" aria-label="已答题数" max="20" value="0"></progress>
+      <form id="form">
+        <fieldset><legend tabindex="-1" id="question"></legend><div id="choices"></div></fieldset>
+        <div class="actions">
+          <button id="back" class="secondary" type="button">上一题</button>
+          <button id="next" class="primary" type="submit" disabled>下一题</button>
+        </div>
+      </form>
+    </section>
+    <section id="result" hidden aria-labelledby="person">
+      <article class="paper report">
+        <div class="report-top"><span>打工人适配测试</span><span id="role" class="stamp"></span></div>
+        <p id="era" class="era"></p>
+        <h2 id="person" tabindex="-1"></h2>
+        <blockquote id="line"></blockquote>
+        <p id="traits" class="traits"></p>
+        <dl>
+          <dt>为什么适配</dt><dd id="reason"></dd>
+          <dt>你的隐藏优势</dt><dd id="strength"></dd>
+          <dt>工位彩蛋</dt><dd id="bonus"></dd>
+        </dl>
+        <p class="fine">虚构团队 · 趣味职场测试</p>
+      </article>
+      <div class="actions result-actions"><span>可截图分享上方结果卡</span><button id="restart" class="secondary" type="button">重新测试</button></div>
+    </section>
+  </main>
+  <footer>结果仅供娱乐 · 团队原型为虚构设定</footer>
+</body>
+</html>
